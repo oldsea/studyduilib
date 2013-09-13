@@ -90,6 +90,7 @@ public:
             CDialogBuilder builder;
             CControlUI* pRoot = builder.Create(_T("test1.xml"), (UINT)0, NULL, &m_pm);
             ASSERT(pRoot && "Failed to parse XML");
+			MessageBox(NULL, pRoot->GetBkImage(), 0, 0);
             m_pm.AttachDialog(pRoot);
             m_pm.AddNotifier(this);
             Init();

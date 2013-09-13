@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="300,144" sizebox="4,4,6,6" caption="0,0,0,30">
+    <Font name="宋体" size="13" bold="false" italic="false" />
+    <Font name="幼圆" size="24" bold="false" italic="false" />
+    <VerticalLayout name="VerticalLayoutUI1" pos="4,4,279,137" width="275" height="133" bkimage="calc1.png">
+        <HorizontalLayout name="HorizontalLayoutUI1" pos="0,0,300,36" width="300" height="36">
+            <HorizontalLayout name="HorizontalLayoutUI2" float="true" pos="0,0,154,36">
+                <Container name="ContainerUI1" float="true" pos="7,5,38,31" bkimage="file=&apos;calc_r6_c2.png&apos; mask=&apos;0xffffffff&apos;" />
+                <Text name="TextUI1" text="AdderCalc" float="true" pos="41,7,130,29" textpadding="2,4,2,0" textcolor="#000000FF" disabledtextcolor="#FFA7A6AA" font="0" align="centerwrap" />
+            </HorizontalLayout>
+            <HorizontalLayout name="HorizontalLayoutUI3" float="true" pos="153,0,299,36">
+                <Button name="BtnMin" float="true" pos="51,2,80,33" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;calc_r12_c5.png&apos; source=&apos;30,0,60,31&apos; mask=&apos;0xffffffff&apos;" hotimage="file=&apos;calc_r12_c5.png&apos; source=&apos;0,0,29,31&apos; mask=&apos;0xffffffff&apos;" pushedimage="file=&apos;calc_r12_c5.png&apos; source=&apos;59,0,90,31&apos; mask=&apos;0xffffffff&apos;" />
+                <Button name="BtnMax" float="true" pos="81,0,110,31" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;calc_r10_c4.png&apos; source=&apos;30,0,60,31&apos; mask=&apos;0xffffffff&apos;" hotimage="file=&apos;calc_r10_c4.png&apos; source=&apos;0,0,29,31&apos; mask=&apos;0xffffffff&apos;" pushedimage="file=&apos;calc_r10_c4.png&apos; source=&apos;59,0,90,31&apos; mask=&apos;0xffffffff&apos;" />
+                <Button name="BtnClose" float="true" pos="111,2,140,33" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;calc_r4_c4.png&apos; source=&apos;30,0,60,31&apos; mask=&apos;0xffffffff&apos;" hotimage="file=&apos;calc_r4_c4.png&apos; source=&apos;0,0,29,31&apos; mask=&apos;0xffffffff&apos;" pushedimage="file=&apos;calc_r4_c4.png&apos; source=&apos;59,0,90,31&apos; mask=&apos;0xffffffff&apos;" />
+            </HorizontalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout name="HorizontalLayoutUI4" pos="0,38,299,142" width="299" height="104">
+            <Button name="BtnCalc" text="计算" float="true" pos="215,69,288,96" bkimage="file=&apos;calc_r5_c7.png&apos; mask=&apos;0xffffffff&apos;" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" align="center" />
+            <Edit name="EditSource1" text="123" float="true" pos="31,23,73,47" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Edit name="EditSource2" text="123" float="true" pos="115,23,157,47" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Edit name="EditResult" float="true" pos="214,23,256,47" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Label name="LabelUI1" text="AdderCalc V1.0 borlittle" float="true" pos="3,82,157,103" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>
