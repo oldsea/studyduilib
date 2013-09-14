@@ -16,6 +16,7 @@ public:
 		m_pMaxBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("maxbtn")));
 		m_pRestoreBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("restorebtn")));
 		m_pMinBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("minbtn")));
+		m_pScanNow = static_cast<CButtonUI*>(m_pm.FindControl(_T("btn_scannow")));
 	}
 
 	void OnPrepare() {
@@ -35,6 +36,13 @@ public:
 				SendMessage(WM_SYSCOMMAND, SC_MAXIMIZE, 0); return; }
 			else if( msg.pSender == m_pRestoreBtn ) { 
 				SendMessage(WM_SYSCOMMAND, SC_RESTORE, 0); return; }
+
+			//这里直接比较不行，难道是因为在另一个xml的windows中？
+			else if (msg.pSender->GetName() == m_pScanNow->GetName())
+			{
+				MessageBox(0, _T("scannow"), 0, 0);
+				return;
+			}
 		}
 		else if(msg.sType==_T("selectchanged"))
 		{
@@ -238,14 +246,15 @@ private:
 	CButtonUI* m_pRestoreBtn;
 	CButtonUI* m_pMinBtn;
 	//...
+	CButtonUI* m_pScanNow;
 };
 
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
 	CPaintManagerUI::SetInstance(hInstance);
-	CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath() + _T("skin"));
-	CPaintManagerUI::SetResourceZip(_T("360SafeRes.zip"));
+	CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath() + _T("skin\\TestApp1Res"));
+	//CPaintManagerUI::SetResourceZip(_T("360SafeRes.zip"));
 
 	HRESULT Hr = ::CoInitialize(NULL);
 	if( FAILED(Hr) ) return 0;

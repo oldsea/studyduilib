@@ -88,9 +88,9 @@ public:
         if( uMsg == WM_CREATE ) { // 进行初始化工作. 比如最重要的XML加载解析工作.  
             m_pm.Init(m_hWnd);
             CDialogBuilder builder;
-            CControlUI* pRoot = builder.Create(_T("test1.xml"), (UINT)0, NULL, &m_pm);
+            CControlUI* pRoot = builder.Create(_T("skin.xml"), (UINT)0, NULL, &m_pm);
             ASSERT(pRoot && "Failed to parse XML");
-			MessageBox(NULL, pRoot->GetBkImage(), 0, 0);
+			//MessageBox(NULL, pRoot->GetBkImage(), 0, 0);
             m_pm.AttachDialog(pRoot);
             m_pm.AddNotifier(this);
             Init();
@@ -117,7 +117,9 @@ public:
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
     CPaintManagerUI::SetInstance(hInstance);
-    CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath());
+    //CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath()+_T("skin\\TestApp1Res"));
+	CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath() + _T("skin"));
+	CPaintManagerUI::SetResourceZip(_T("360SafeRes.zip"));
 
     HRESULT Hr = ::CoInitialize(NULL);
     if( FAILED(Hr) ) return 0;

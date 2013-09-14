@@ -664,7 +664,7 @@ void CContainerUI::DoPaint(HDC hDC, const RECT& rcPaint)
         if( !::IntersectRect(&rcTemp, &rcPaint, &rc) ) {
             for( int it = 0; it < m_items.GetSize(); it++ ) {
                 CControlUI* pControl = static_cast<CControlUI*>(m_items[it]);
-				MessageBox(0, pControl->GetName().GetData(), 0, 0);
+				//MessageBox(0, pControl->GetName().GetData(), 0, 0);
                 if( !pControl->IsVisible() ) continue;
                 if( !::IntersectRect(&rcTemp, &rcPaint, &pControl->GetPos()) ) continue;
                 if( pControl ->IsFloat() ) {
