@@ -1,0 +1,8 @@
+m_TrayIcon = new CTrayIcon;
+        HICON hIcon = (HICON)::LoadImage(CPaintManagerUI::GetInstance(), 
+            MAKEINTRESOURCE(IDI_MAIN_ICON), IMAGE_ICON, 16, 16, LR_DEFAULTCOLOR);
+        m_TrayIcon->SetIcon(hIcon);
+    
+        m_TrayIcon->SetToolTip(L"haha");
+        m_TrayIcon->SetVisible(true);
+        m_TrayIcon->SetObserver(this);

@@ -16,7 +16,10 @@ public:
 		m_pMaxBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("maxbtn")));
 		m_pRestoreBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("restorebtn")));
 		m_pMinBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("minbtn")));
-		m_pScanNow = static_cast<CButtonUI*>(m_pm.FindControl(_T("btn_scannow")));
+		//m_pScanNow = static_cast<CButtonUI*>(m_pm.FindControl(_T("btn_scannow"))); //error
+		m_pScanNow = static_cast<CButtonUI*>(m_pm.FindSubControlByName(NULL, _T("btn_scannow")));
+		m_pScanNowParent = static_cast<CContainerUI*>(m_pm.FindControl(_T("ComputerExamine")));
+		m_pScanNow2 = static_cast<CButtonUI*>(m_pm.FindSubControlByName(m_pScanNowParent, _T("btn_scannow")));
 	}
 
 	void OnPrepare() {
@@ -38,6 +41,10 @@ public:
 				SendMessage(WM_SYSCOMMAND, SC_RESTORE, 0); return; }
 
 			//这里直接比较不行，难道是因为在另一个xml的windows中？
+			else if (msg.pSender == m_pScanNow2)
+			{
+				MessageBox(0, _T("scannow2,good"), 0, 0);
+			}
 			else if (msg.pSender->GetName() == m_pScanNow->GetName())
 			{
 				MessageBox(0, _T("scannow"), 0, 0);
@@ -247,6 +254,9 @@ private:
 	CButtonUI* m_pMinBtn;
 	//...
 	CButtonUI* m_pScanNow;
+	CContainerUI* m_pScanNowParent;
+	CButtonUI* m_pScanNow2;
+
 };
 
 
